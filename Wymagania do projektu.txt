@@ -1,0 +1,13 @@
+-rejestracja
+-logowanie
+-hashowanie haseł +sól +pieprz
+-baza danych
+-CRUD
+-Rozbudowany formularz
+-Walidacja klient i serwer
+-Junit, testy jednostkowe
+-Role użytkowników
+
+Można ale nie trzeba:
+* custom front
+* docker
