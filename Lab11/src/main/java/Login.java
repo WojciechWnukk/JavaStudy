@@ -1,3 +1,5 @@
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Scanner;
@@ -33,10 +35,10 @@ public class Login {
             FileReader fileReader = new FileReader("users.txt");
             Scanner scanner = new Scanner(fileReader);
             String fileLogin = scanner.nextLine();
-            String filePassword = scanner.nextLine();
+            String fileHashedPassword = scanner.nextLine();
             scanner.close();
             fileReader.close();
-            return login.equals(fileLogin) && password.equals(filePassword);
+            return login.equals(fileLogin) && BCrypt.checkpw(password, fileHashedPassword);
         } catch (Exception e) {
             System.out.println("Error");
         }

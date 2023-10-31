@@ -1,3 +1,5 @@
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -13,10 +15,12 @@ public class Register {
         String password = scanner.nextLine();
 
         if (isPasswordValid(password)) {
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
             try {
                 FileWriter fileWriter = new FileWriter("users.txt");
                 fileWriter.write(login + "\n");
-                fileWriter.write(password + "\n");
+                fileWriter.write(hashedPassword + "\n");
                 fileWriter.close();
             } catch (Exception e) {
                 System.out.println("Error");
