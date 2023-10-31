@@ -34,10 +34,8 @@ public class MealService {
             Meal meal = existingMeal.get();
             meal.setMealName(updatedMeal.getMealName());
             meal.setPrice(updatedMeal.getPrice());
-            // Możesz dodać inne pola, które chcesz zaktualizować
             return mealRepository.save(meal);
         } else {
-            // Obsłuż błąd - np. rzucenie wyjątku lub zwrócenie wartości domyślnej
             return null;
         }
     }

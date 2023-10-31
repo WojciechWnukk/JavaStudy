@@ -41,11 +41,5 @@ public class OrderController {
     public void deleteOrder(@PathVariable Long id) {
         orderService.deleteOrder(id);
     }
-/*
-    @GetMapping("/meal/{mealId}")
-    public List<Order> getOrdersByMeal(@PathVariable Long mealId) {
-        Meal meal = mealService.getMealById(mealId);
-        return orderService.getOrdersByMeal(meal);
-    }
-*/
+
 }
