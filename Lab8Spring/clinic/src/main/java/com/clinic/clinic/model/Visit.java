@@ -1,6 +1,5 @@
 package com.clinic.clinic.model;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,10 +12,9 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Patient {
+public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String surname;
+    private String date;
 }
